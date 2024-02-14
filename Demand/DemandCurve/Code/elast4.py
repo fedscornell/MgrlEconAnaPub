@@ -1,5 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
+pd.set_option('display.max_rows', 20)
+pd.set_option('display.max_columns', 20)
 
 # Define price range
 price_range = np.linspace(0.1, 10, 100)
@@ -49,3 +51,51 @@ plt.tight_layout()
 # Show plot
 plt.show()
 
+# CE
+p = 1
+eta = -0.5
+Q = 10 * p ** eta 
+print(Q)
+
+p_range = np.linspace(0.1, 10, 100)
+Q = 10 * p_range ** eta 
+plt.scatter(Q, p_range)
+plt.show()
+
+fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+
+eta = -1
+Q = 10 * p_range ** eta
+axs[0, 0].plot(p_range,Q, label='Eta = -1')
+eta = -0.1
+
+Q = 10 * p_range ** eta
+axs[0, 1].plot(p_range,Q, label='Eta = -0.1')
+plt.show()
+
+def ce_fn(eta):
+    p_range = np.linspace(0.1, 10, 100)
+    Q = 10 * p_range ** eta
+    return Q
+
+fig, axs = plt.subplots(2, 2, figsize=(10, 8))
+axs[0, 0].plot(ce_fn(-1), label='Eta = -1')
+# axs[0, 0].legend()
+axs[0, 1].plot(ce_fn(-0.5), label='Eta = -0.1')
+# axs[0, 1].legend()
+axs[1, 0].plot(ce_fn(-0.3), label='Eta = -0.1')
+# axs[1, 0].legend()
+axs[1, 1].plot(ce_fn(-0.1), label='Eta = -0.1')
+# axs[1, 1].legend()
+plt.show()
+# 2 * 1 plot
+plt.subplot(2, 1, 1)
+eta = -1
+Q = 10 * p_range ** eta
+plt.plot(p_range,Q  , label='Eta = -1')
+plt.subplot(2, 1, 2)
+eta = -0.1
+Q = 10 * p_range ** eta
+plt.plot(p_range,Q  , label='Eta = -1')
+plt.tight_layout()
+plt.show()
