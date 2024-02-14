@@ -8,9 +8,6 @@ price_range = np.linspace(0.1, 10, 100)
 def perfectly_inelastic_demand(price):
     return np.ones_like(price) * 5  # Constant demand
 
-def perfectly_elastic_demand(price):
-    return 10 / price  # Inverse demand
-
 def constant_elasticity_demand(price, elasticity):
     return 10 * price ** elasticity  # Constant elasticity demand
 
@@ -25,7 +22,8 @@ axs[0, 0].set_ylabel('Quantity')
 axs[0, 0].legend()
 
 # Plot Perfectly Elastic Demand
-axs[0, 1].plot(price_range, perfectly_elastic_demand(price_range), label='Perfectly Elastic')
+corresponding_range = np.full_like(price_range, 10)
+axs[0, 1].plot(corresponding_range,price_range,  label='Perfectly Elastic')
 axs[0, 1].set_title('Perfectly Elastic Demand')
 axs[0, 1].set_xlabel('Price')
 axs[0, 1].set_ylabel('Quantity')
