@@ -4,7 +4,7 @@
 This project is developed to analyze retail demand and develop pricing strategies.
 
 ## Contributions
-Special thanks to Shad Griffin for the wonderful project that he developed and shared.
+Special thanks to Shad Griffin for the wonderful project that he developed and generously shared with us.
 
 ## Data Source:
 The source data is available at [Data Source](https://github.com/fedscornell/MgrlEconAnaPub/blob/main/Demand/RevenueAnalysis/RetailData.csv).
@@ -29,3 +29,7 @@ PRICE: the average price across multiple items sold at the retail outlet.
 QUANTITY: the number of items sold by the retail outlet in the last year.
 
 REVENUE: the total revenue for the store in the last year.
+
+### Regression Analysis
+ 
+Q=f(price, income, socio-econ)
